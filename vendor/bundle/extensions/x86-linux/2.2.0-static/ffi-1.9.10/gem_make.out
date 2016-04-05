@@ -1,0 +1,44 @@
+/home/hassan/.rbenv/versions/2.2.1/bin/ruby -r ./siteconf20160405-24491-1gr2p8j.rb extconf.rb
+checking for ffi_call() in -lffi... yes
+checking for ffi_prep_closure()... yes
+checking for ffi_raw_call()... yes
+checking for ffi_prep_raw_closure()... yes
+checking for rb_thread_blocking_region()... no
+checking for rb_thread_call_with_gvl()... yes
+checking for rb_thread_call_without_gvl()... yes
+checking for ffi_prep_cif_var()... yes
+creating extconf.h
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling FunctionInfo.c
+compiling DataConverter.c
+compiling ffi.c
+compiling Type.c
+compiling Function.c
+compiling Platform.c
+compiling ClosurePool.c
+compiling AbstractMemory.c
+compiling LastError.c
+compiling Struct.c
+compiling DynamicLibrary.c
+compiling Call.c
+compiling StructLayout.c
+compiling ArrayType.c
+compiling StructByValue.c
+compiling MappedType.c
+compiling LongDouble.c
+compiling Buffer.c
+compiling MemoryPointer.c
+compiling Pointer.c
+compiling Variadic.c
+compiling MethodHandle.c
+compiling Thread.c
+compiling StructByReference.c
+compiling Types.c
+linking shared-object ffi_c.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20160405-24491-p2uciq
