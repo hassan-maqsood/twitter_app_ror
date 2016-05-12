@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'user/new'
+  get 'users/new'
 
   # get 'pages/home'
   #
@@ -15,8 +15,10 @@ Rails.application.routes.draw do
   get 'help'    => 'pages#help'
   get 'about'   => 'pages#about'
   get 'contact' => 'pages#contact'
-  get 'signup' => 'user#new'
-  resources :user
+  get 'signup' => 'users#new'
+
+  # resources :UsersController
+  resources :users
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
