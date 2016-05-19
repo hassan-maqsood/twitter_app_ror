@@ -23,5 +23,5 @@ test:
 production:
   <<: *default
   database: db/production
-  gmail_username: 'hassan221b@gmail.com'
-  gmail_password: 'googlenewhtc221b'
+#  gmail_username: 'hassan221b@gmail.com'
+#  gmail_password: 'googlenewhtc221b'
