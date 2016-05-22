@@ -6,14 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create!(name:  "hassan",
-             email: "h@m.com",
+             email: "hassan221b@gmail.com",
              password:              "123123",
              password_confirmation: "123123",
              admin:     true,
              activated: true,
              activated_at: Time.zone.now)
 
-99.times do |n|
+9.times do |n|
   name  = 'hassan'
   email = "h#{n+1}@m.com"
   password = "123123"
@@ -23,4 +23,10 @@ User.create!(name:  "hassan",
                password_confirmation: password,
                activated: true,
                activated_at: Time.zone.now)
+end
+
+users = User.order(:created_at).take(6)
+50.times do
+  content = 'awesome work hassan'
+  users.each { |user| user.microposts.create!(content: content) }
 end
