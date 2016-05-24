@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :microposts, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   attr_accessor :remember_token, :activation_token
   before_save   :downcase_email
@@ -36,7 +37,7 @@ class User < ActiveRecord::Base
 
   # Activates an account.
   def activate
-    update_attribute(:activated,    true)
+    update_attribute(:activated,true)
     update_attribute(:activated_at, Time.zone.now)
   end
 
@@ -55,10 +56,19 @@ class User < ActiveRecord::Base
     update_attribute(:remember_digest, User.digest(remember_token))
   end
 
-  # Returns true if the given token matches the digest.
-  def authenticated?(remember_token)
-    return false if remember_digest.nil?
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  # # Returns true if the given token matches the digest.
+  # def authenticated?(remember_token#   return false if remember_digest.nil?
+  #   BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  # end
+
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
+
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
   # Forgets a user.
