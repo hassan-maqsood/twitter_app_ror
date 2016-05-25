@@ -82,9 +82,10 @@ Rails.application.configure do
   host = 'young-ridge-31606.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
+      :domain         => 'gmail.com',
       :address        => 'smtp.gmail.com',
       :port           => '587',
-      :authentication => :html,
+      :authentication => :login,
       :user_name      => 'hassan221b@gmail.com',
       :password       => 'googlenewhtc221b',
       :enable_starttls_auto => true
