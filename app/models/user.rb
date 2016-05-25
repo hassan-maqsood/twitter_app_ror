@@ -73,9 +73,10 @@ class User < ActiveRecord::Base
   #   BCrypt::Password.new(remember_digest).is_password?(remember_token)
   # end
 
-  def feed
-    Micropost.where("user_id = ?", id)
-  end
+    def feed
+      Micropost.where("user_id IN (:following_ids) OR user_id = :user_id",
+                      following_ids: following_ids, user_id: id)
+    end
 
   def authenticated?(attribute, token)
     digest = send("#{attribute}_digest")
