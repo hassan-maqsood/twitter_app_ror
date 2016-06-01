@@ -220,11 +220,16 @@ input {
 .microposts {
   list-style: none;
   display: inline;
-  float: left;
+  float: none;
   padding: 0;
+  + .pagination {
+    clear: both;
+    display: block;
+  }
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
+    clear: both;
   }
   .user {
     margin-top: 5em;
