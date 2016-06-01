@@ -86,8 +86,8 @@ Rails.application.configure do
       :address        => 'smtp.gmail.com',
       :port           => '587',
       :authentication => :login,
-      :user_name      => 'twitterapp221b@gmail.com',
-      :password       => 'twitterapp',
+      :user_name      => 'mytwitter221b@gmail.com',
+      :password       => 'mytwitter',
       :enable_starttls_auto => true
   }
 end

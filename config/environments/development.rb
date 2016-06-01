@@ -24,8 +24,8 @@ Rails.application.configure do
       :domain         => 'gmail.com',
       :port           => '587',
       :authentication => :login,
-      :user_name      => 'twitterapp221b@gmail.com',
-      :password       => 'twitterapp',
+      :user_name      => 'mytwitter221b@gmail.com',
+      :password       => 'mytwitter',
       :enable_starttls_auto => true
   }
   # Print deprecation notices to the Rails logger.
